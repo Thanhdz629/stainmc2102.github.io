@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stain Kagenou | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    img.avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #00ffff;
+      margin-bottom: 20px;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+      box-shadow: 0 0 30px rgba(0,255,255,0.4);
+    }
+
+    img.avatar:hover {
+      transform: scale(1.08) rotate(3deg);
+      box-shadow: 0 0 50px rgba(0,255,255,0.7);
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin: 0;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.title {
+      font-size: 1.2em;
+      color: #ddd;
+      margin: 5px 0 20px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.6em;
+      color: #00ffff;
+      transition: 0.3s ease;
+    }
+
+    .socials a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 15px;
+    }
+
+    .tabs button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.4s ease;
+      font-size: 1em;
+      box-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
+    }
+
+    .tabs button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffff;
+    }
+
+    .tabs button.active {
+      background: #ffffff;
+      color: #0072ff;
+      box-shadow: 0 0 20px #ffffff;
+    }
+
+    .tab-content {
+      display: none;
+      margin-top: 30px;
+      text-align: left;
+      animation: fadeIn 0.5s ease forwards;
+      opacity: 0;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .tab-content h2 {
+      font-size: 1.5em;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skills span {
+      background: #00c6ff;
+      color: #000;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.95em;
+      transition: 0.2s ease;
+    }
+
+    .skills span:hover {
+      background: #fff;
+      color: #0072ff;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @media screen and (max-width: 600px) {
+      .tabs {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tabs button {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://yt3.googleusercontent.com/Phv9siAXXljMBcY8A9sExm9CBXq76-4KWqDasGa83_26W7gqRcHaC_gI3MY0ufsOq0-I-5gB0A=s160-c-k-c0x00ffffff-no-rj" alt="Avatar" class="avatar" />
+    <h1>Stain Kagenou</h1>
+    <p class="title">🌟 Developer | 🎮 Gamer | 🎥 Youtuber</p>
+
+    <div class="socials">
+      <a href="https://www.facebook.com/amnguyensinhthanh/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://youtube.com/stainmc2102" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="mailto:thanhdzd02@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab(event, 'info')"><i class="fas fa-user"></i> Thông tin</button>
+      <button class="tab-btn" onclick="showTab(event, 'gaming')"><i class="fas fa-gamepad"></i> Game</button>
+      <button class="tab-btn" onclick="showTab(event, 'coding')"><i class="fas fa-code"></i> Lập trình</button>
+      <button class="tab-btn" onclick="showTab(event, 'contact')"><i class="fas fa-phone"></i> Liên hệ</button>
+    </div>
+
+    <div id="info" class="tab-content active">
+      <h2>📌 Thông tin cá nhân</h2>
+      <p><strong>Họ tên:</strong> Đàm Nguyễn Sinh Thành</p>
+      <p><strong>Biệt danh:</strong> Stain Kagenou</p>
+      <p><strong>Tuổi:</strong> 1x</p>
+      <p><strong>Giới tính:</strong> Nam</p>
+      <p><strong>Nghề nghiệp:</strong> Lập trình viên Web & Game</p>
+      <p><strong>Địa chỉ:</strong> Quảng Bình, Việt Nam</p>
+      <p><strong>Sở thích:</strong> Lập trình, chơi game, học công nghệ mới</p>
+
+      <h2>📝 Giới thiệu</h2>
+      <p>Tôi là lập trình viên đam mê công nghệ, thích tạo ra những ứng dụng hữu ích và khám phá thế giới game. Ngoài việc lập trình, tôi cũng là một game thủ và người sáng tạo nội dung trên YouTube.</p>
+    </div>
+
+    <div id="gaming" class="tab-content">
+      <h2>🎮 Kỹ năng chơi game</h2>
+      <div class="skills">
+        <span>RTS</span>
+        <span>FPS</span>
+        <span>Teamwork</span>
+        <span>Low Tier 5 CPvP</span>
+        <span>High Tier 5 PvP</span>
+      </div>
+    </div>
+
+    <div id="coding" class="tab-content">
+      <h2>💼 Kỹ năng lập trình</h2>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Python</span>
+        <span>Lua</span>
+        <span>Unity</span>
+        <span>Pygame</span>
+      </div>
+    </div>
+
+    <div id="contact" class="tab-content">
+      <h2>📍 Liên hệ</h2>
+      <p>Email: thanhdzd02@gmail.com</p>
+      <p>Địa chỉ: Quảng Bình, Việt Nam</p>
+    </div>
+
+    <footer>
+      <p>© 2025 Đàm Nguyễn Sinh Thành - Portfolio cá nhân</p>
+    </footer>
+  </div>
+
+  <script>
+    function showTab(evt, tabId) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(c => {
+        c.classList.remove('active');
+        c.style.animation = "none";
+        c.offsetHeight; // reflow
+        c.style.animation = null;
+      });
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const selected = document.getElementById(tabId);
+      selected.classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
